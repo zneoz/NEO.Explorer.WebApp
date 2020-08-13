@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import { createEntityAdapter, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from 'axios';

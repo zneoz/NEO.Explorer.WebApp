@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { createSlice } from '@reduxjs/toolkit';
 import firebase from 'firebase';
 import history from '@history';
