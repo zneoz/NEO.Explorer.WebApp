@@ -1,10 +1,8 @@
-import Button from '@material-ui/core/Button';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
 import { useTheme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -36,12 +34,6 @@ function LanguageSwitcher(props) {
 	const { i18n } = useTranslation();
 	const [menu, setMenu] = useState(null);
 
-	const currentLng = languages.find(lng => lng.id === i18n.language);
-
-	const langMenuClick = event => {
-		setMenu(event.currentTarget);
-	};
-
 	const langMenuClose = () => {
 		setMenu(null);
 	};
@@ -66,18 +58,6 @@ function LanguageSwitcher(props) {
 
 	return (
 		<>
-			<Button className="h-40 w-64" onClick={langMenuClick}>
-				<img
-					className="mx-4 min-w-20"
-					src={`assets/images/flags/${currentLng.flag}.png`}
-					alt={currentLng.title}
-				/>
-
-				<Typography className="mx-4 font-bold" color="textSecondary">
-					{currentLng.id}
-				</Typography>
-			</Button>
-
 			<Popover
 				open={Boolean(menu)}
 				anchorEl={menu}

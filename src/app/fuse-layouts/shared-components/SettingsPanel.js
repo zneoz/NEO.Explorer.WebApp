@@ -1,6 +1,5 @@
 import FuseScrollbars from '@fuse/core/FuseScrollbars';
 import FuseSettings from '@fuse/core/FuseSettings';
-import Button from '@material-ui/core/Button';
 import { red } from '@material-ui/core/colors';
 import Dialog from '@material-ui/core/Dialog';
 import Icon from '@material-ui/core/Icon';
@@ -8,7 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Slide from '@material-ui/core/Slide';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import clsx from 'clsx';
 import React, { useState } from 'react';
 import FuseThemeSchemes from '@fuse/core/FuseThemeSchemes';
 
@@ -85,36 +83,12 @@ function SettingsPanel() {
 	const classes = useStyles();
 	const [open, setOpen] = useState(false);
 
-	const handleOpen = panelId => {
-		setOpen(panelId);
-	};
-
 	const handleClose = () => {
 		setOpen(false);
 	};
 
 	return (
 		<>
-			<div className={classes.buttonWrapper} id="fuse-settings-schemes">
-				<Button
-					className={clsx(classes.button, classes.settingsButton)}
-					onClick={() => handleOpen('settings')}
-					variant="text"
-					color="inherit"
-				>
-					<Icon className={classes.buttonIcon}>settings</Icon>
-				</Button>
-
-				<Button
-					className={clsx(classes.button, classes.schemesButton)}
-					onClick={() => handleOpen('schemes')}
-					variant="text"
-					color="inherit"
-				>
-					<Icon className={classes.buttonIcon}>palette</Icon>
-				</Button>
-			</div>
-
 			<Dialog
 				TransitionComponent={Transition}
 				aria-labelledby="settings-panel"

@@ -1,4 +1,3 @@
-import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -15,7 +14,7 @@ function QuickPanelToggleButton(props) {
 }
 
 QuickPanelToggleButton.defaultProps = {
-	children: <Icon>bookmarks</Icon>
+	// children: <Icon>bookmarks</Icon>
 };
 
 export default QuickPanelToggleButton;
